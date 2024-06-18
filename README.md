@@ -3,6 +3,9 @@
 
 This project is based on the IPL match prediction used in the second innings of a cricket match. The trained model takes into account factors such as current run rate (CRR), required run rate (RRR), runs, and balls remaining. The model is trained after going through two major datasets, both of which are available on [Kaggle](https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
 
+- The `iplproj` directory contains the Django files and the trained model in the form of `pipe.pkl`.
+- The `ipl.py` file contains the code used to train the data and create the model.
+
 
 # Project Structure
 ```
