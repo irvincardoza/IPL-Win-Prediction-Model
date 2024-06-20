@@ -40,7 +40,7 @@ iplproj/
 
 2. Navigate to the project directory:
     ```bash
-    cd plproj
+    cd iplproj
     ```
 
 3. Install the required dependencies:
