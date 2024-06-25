@@ -11,26 +11,91 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            
             font-family: "Montserrat", sans-serif;
-            font-weight: 300;
-            
-            
+            font-weight: 300; 
             background: #314755;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-color: white;
+            background: -webkit-linear-gradient(to top, #26a0da, black);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #26a0da, black); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: white;
             padding: 20px;
         }
+        .form-control {
+            width: 80%;
+            border: 1px solid black;
+        }
         .form-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
         }
         .form-label {
             color: rgb(0, 0, 0);
+        }
+
+        .btnnn {
+            cursor: pointer;
+            font-size: large;
+            font-family: inherit;
+            font-weight: bold;
+            max-width: 40%;
+            color: black;
+            background-color: #f8f8fd;
+            padding: 0.8em 2.2em;
+            border-radius: 50em;
+            border: 6px solid grey;
+            box-shadow: 0px 8px black;
+        }
+
+        @media(max-width: 768px) {
+            .btnnn {
+                max-width: 80%;
+                font-size: medium;
+            }
+        }
+
+        .btnnn:active{
+            position: relative;
+            top: 8px;
+            border: 6px solid #646fff;
+            box-shadow: 0px 0px;
+        }
+
+        .form-group {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .form-label {
+            padding-left: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .text-center {
+            background-clip: text;
+            background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+            color: var(--color-background);
+            font-size: var(--font-size);
+            font-weight: var(--font-weight);
+            letter-spacing: var(--letter-spacing);
+            padding: calc(--stroke-width / 2);
+            -webkit-text-stroke-color: transparent;
+            -webkit-text-stroke-width: var(--stroke-width);
+        }
+
+        :root {
+            --color-background: #000119;
+            --stroke-width: calc(1em / 16);
+            --font-size: 10vmin;
+            --font-weight: 700;
+            --letter-spacing: calc(1em / 8);
+        }
+
+        .texter {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #cardo {
+            font-size: 20px;
         }
         
     </style>
@@ -38,59 +103,75 @@ color: white;
 <body>
     <div class="container">
         <h1 class="text-center my-4">IPL Win Predictor</h1>
-       <center><p>By Irvin Cardoza</p></center> 
-       <center><p>It takes the required fields from the second innings of the match and predicts results using a pre trained model.</p></center>
+       <center><p class="texter" id="cardo">By Irvin Cardoza</p></center> 
+       <center><p class="texter">It takes the required fields from the second innings of the match and predicts results using a pre trained model.</p></center>
         <div class="form-container">
             <form method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="batting_team" class="form-label">Batting Team:</label>
-                    <select name="batting_team" id="batting_team" class="form-control" required>
-                        {% for team in teams %}
-                            <option value="{{ team }}">{{ team }}</option>
-                        {% endfor %}
-                    </select>
+                    <center>
+                        <select name="batting_team" id="batting_team" class="form-control" required>
+                            {% for team in teams %}
+                                <option value="{{ team }}">{{ team }}</option>
+                            {% endfor %}
+                        </select>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="bowling_team" class="form-label">Bowling Team:</label>
-                    <select name="bowling_team" id="bowling_team" class="form-control" required>
-                        {% for team in teams %}
-                            <option value="{{ team }}">{{ team }}</option>
-                        {% endfor %}
-                    </select>
+                    <center>
+                        <select name="bowling_team" id="bowling_team" class="form-control" required>
+                            {% for team in teams %}
+                                <option value="{{ team }}">{{ team }}</option>
+                            {% endfor %}
+                        </select>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="city" class="form-label">City:</label>
-                    <select name="city" id="city" class="form-control" required>
-                        {% for city in cities %}
-                            <option value="{{ city }}">{{ city }}</option>
-                        {% endfor %}
-                    </select>
+                    <center>
+                        <select name="city" id="city" class="form-control" required>
+                            {% for city in cities %}
+                                <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="target" class="form-label">Target:</label>
-                    <input type="number" name="target" id="target" class="form-control" required>
+                    <center>
+                        <input type="number" name="target" id="target" class="form-control" required>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="score" class="form-label">Score:</label>
-                    <input type="number" name="score" id="score" class="form-control" required>
+                    <center>
+                        <input type="number" name="score" id="score" class="form-control" required>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="overs" class="form-label">Overs Completed:</label>
-                    <input type="number" step="0.1" name="overs" id="overs" class="form-control" required>
+                    <center>
+                        <input type="number" step="0.1" name="overs" id="overs" class="form-control" required>
+                    </center>
                 </div>
 
                 <div class="form-group">
                     <label for="wickets" class="form-label">Wickets Out:</label>
-                    <input type="number" name="wickets" id="wickets" class="form-control" required>
+                    <center>
+                        <input type="number" name="wickets" id="wickets" class="form-control" required>
+                    </center>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-block">Predict Probability</button>
+                <center>
+                    <button type="submit" class="btn btn-success btn-block btnnn">Predict Probability</button>
+                </center>
             </form>
         </div>
     </div>
