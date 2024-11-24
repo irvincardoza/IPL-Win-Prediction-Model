@@ -44,7 +44,9 @@ iplproj/
     ```
 
 3. Install the required dependencies:
-    
+     ```bash
+    pip install -r requirements.txt
+    ```
 
 4. Apply migrations:
     ```bash
