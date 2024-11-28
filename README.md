@@ -1,4 +1,14 @@
 
+
+
+https://github.com/user-attachments/assets/df788677-f842-4753-8db1-20b859bb1eb0
+
+
+
+https://github.com/user-attachments/assets/f8e0c0ac-26df-45ef-8d70-36f8867b3bf0
+
+
+
 # IPL Match Prediction
 
 This project is based on the IPL match prediction used in the second innings of a cricket match. The trained model takes into account factors such as current run rate (CRR), required run rate (RRR), runs, and balls remaining. The model is trained after going through two major datasets, both of which are available on [Kaggle](https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020).
