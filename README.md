@@ -1,12 +1,4 @@
-
-
-
 https://github.com/user-attachments/assets/df788677-f842-4753-8db1-20b859bb1eb0
-
-
-
-https://github.com/user-attachments/assets/f8e0c0ac-26df-45ef-8d70-36f8867b3bf0
-
 
 
 # IPL Match Prediction
